@@ -72,11 +72,14 @@ ul li input {
 .deleteButton {
   display: inline;
   margin-right: 2rem;
+  border: 0;
+  padding: 0;
+  color: #fefdfe;
 }
 .addButtonContainer {
   display: inline-block;
 }
-button {
+.addButton {
   background-color: #f469bc;
   border-radius: 50%;
   height: 6em;

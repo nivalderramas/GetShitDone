@@ -1,7 +1,7 @@
 import React from "react";
 
-function Status() {
-  return <div className="status">You have completed 2/5 tasks</div>;
+function Status({completedTasks, totalTasks}) {
+  return <div className="status">You have completed {completedTasks} of {totalTasks} tasks</div>;
 }
 
 export { Status };

@@ -2,7 +2,13 @@ import React from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 
 function TasksList(props) {
-  const { tasks } = props;
+  const { tasks, toggleTodo, deleteTask } = props;
+  const handleClick = (event) => {
+    toggleTodo(event.target.value);
+  }
+  const handleDelete = (taskTitle) => {
+    deleteTask(taskTitle)
+  }
   return (
     <div className="lista">
       <ul>
@@ -11,14 +17,16 @@ function TasksList(props) {
             <li key={task.title}>
               <div className="listItem">
                 <input
-                  checked={task.completed}
                   type="checkbox"
-                  onclick="return false;"
+                  value={task.title}
+                  onChange={handleClick}
+                  checked={task.completed}
                 />{" "}
                 {task.title} {task.date}
-                <div className="deleteButton">
+                <button className="deleteButton"
+                    onClick={() => handleDelete(task.title)}>
                   <RiDeleteBin5Fill />
-                </div>
+                </button>
               </div>
             </li>
           );
