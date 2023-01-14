@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/GetShitDone/static/css/main.d2d0cd70.css",
+    "main.js": "/GetShitDone/static/js/main.4b98d312.js",
+    "index.html": "/GetShitDone/index.html",
+    "main.d2d0cd70.css.map": "/GetShitDone/static/css/main.d2d0cd70.css.map",
+    "main.4b98d312.js.map": "/GetShitDone/static/js/main.4b98d312.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2d0cd70.css",
+    "static/js/main.4b98d312.js"
+  ]
+}
