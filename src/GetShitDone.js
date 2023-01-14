@@ -10,6 +10,7 @@ import "./css/getShitDone.css";
 
 function GetShitDone() {
   const [searchValue, setSearchValue] = React.useState("");
+  const [showModal, setShowModal] = React.useState(false);
   const {
     item: tasks,
     setItemValue: setTasks,
@@ -53,7 +54,7 @@ function GetShitDone() {
 
   return (
     <div className="main">
-      <todoContext.Provider value={{tasks, toggleTask, deleteTask}}>
+      <todoContext.Provider value={{tasks, toggleTask, deleteTask, showModal, setShowModal}}>
         <Header />
         <Status
           completedTasks={completedTasks.length}
@@ -63,7 +64,7 @@ function GetShitDone() {
         />
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
         <TasksList/>
-        <CreateTask />
+        <CreateTask/>
       </todoContext.Provider>
     </div>
   );
