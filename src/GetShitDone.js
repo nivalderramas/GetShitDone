@@ -4,7 +4,8 @@ import { Status } from "./Status";
 import { TasksList } from "./TasksList";
 import { CreateTask } from "./CreateTask";
 import { SearchBar } from "./SearchBar";
-import { useLocalStorage } from "./hooks/UseLocalStorage";
+import { useLocalStorage } from "./hooks/useLocalStorage";
+import { todoContext } from "./hooks/useContext";
 import "./css/getShitDone.css";
 
 function GetShitDone() {
@@ -14,7 +15,7 @@ function GetShitDone() {
     setItemValue: setTasks,
     error,
     loading,
-  } = useLocalStorage("TODOS_V1", []);
+  } = useLocalStorage("TODOS_V1", [{ title: "Eat", completed: false}]);
   const [completedTasks, setCompletedTasks] = React.useState([]);
   const [searchedTasks, setSearchedTasks] = React.useState([]);
 
@@ -52,20 +53,18 @@ function GetShitDone() {
 
   return (
     <div className="main">
-      <Header />
-      <Status
-        completedTasks={completedTasks.length}
-        totalTasks={tasks.length}
-        error={error}
-        loading={loading}
-      />
-      <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-      <TasksList
-        tasks={searchedTasks}
-        toggleTodo={toggleTask}
-        deleteTask={deleteTask}
-      />
-      <CreateTask />
+      <todoContext.Provider value={{tasks, toggleTask, deleteTask}}>
+        <Header />
+        <Status
+          completedTasks={completedTasks.length}
+          totalTasks={tasks.length}
+          error={error}
+          loading={loading}
+        />
+        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
+        <TasksList/>
+        <CreateTask />
+      </todoContext.Provider>
     </div>
   );
 }

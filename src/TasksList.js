@@ -1,11 +1,9 @@
 import React from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+import { todoContext } from "./hooks/useContext";
 
 function TasksList(props) {
-  const { tasks, toggleTodo, deleteTask } = props;
-  const handleClick = (event) => {
-    toggleTodo(event.target.value);
-  }
+  const { tasks, toggleTask, deleteTask } = React.useContext(todoContext);
   const handleDelete = (taskTitle) => {
     deleteTask(taskTitle)
   }
@@ -19,7 +17,7 @@ function TasksList(props) {
                 <input
                   type="checkbox"
                   value={task.title}
-                  onChange={handleClick}
+                  onChange={(e) => toggleTask(e.target.value)}
                   checked={task.completed}
                 />{" "}
                 {task.title} {task.date}
