@@ -3,7 +3,7 @@ import { RiDeleteBin5Fill } from "react-icons/ri";
 import { todoContext } from "./hooks/useContext";
 
 function TasksList(props) {
-  const { tasks, toggleTask, deleteTask } = React.useContext(todoContext);
+  const { searchedTasks: tasks, toggleTask, deleteTask } = React.useContext(todoContext);
   const handleDelete = (taskTitle) => {
     deleteTask(taskTitle)
   }

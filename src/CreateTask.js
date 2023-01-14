@@ -1,5 +1,6 @@
 import React from "react";
 import { todoContext } from "./hooks/useContext";
+import { NewTaskForm } from "./NewTaskForm";
 import { Modal } from './ui/Modal'
 
 function CreateTask() {
@@ -8,7 +9,7 @@ function CreateTask() {
     <div className="addButtonContainer">
       <button className="addButton" onClick={() => setShowModal(!showModal)} >+</button>
       {showModal && 
-        <Modal>asdas</Modal>
+        <Modal><NewTaskForm/></Modal>
       }
     </div>
   );

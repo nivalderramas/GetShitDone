@@ -52,9 +52,14 @@ function GetShitDone() {
     setTasks(newTasks);
   };
 
+  const addTask = (title) => {
+    let newTasks = [...tasks,{title, completed: false}];
+    setTasks(newTasks);
+  };
+
   return (
     <div className="main">
-      <todoContext.Provider value={{tasks, toggleTask, deleteTask, showModal, setShowModal}}>
+      <todoContext.Provider value={{searchedTasks, toggleTask, deleteTask, showModal, setShowModal, addTask}}>
         <Header />
         <Status
           completedTasks={completedTasks.length}
@@ -63,8 +68,8 @@ function GetShitDone() {
           loading={loading}
         />
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-        <TasksList/>
         <CreateTask/>
+        <TasksList/>
       </todoContext.Provider>
     </div>
   );

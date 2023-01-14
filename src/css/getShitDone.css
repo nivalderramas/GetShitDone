@@ -1,5 +1,11 @@
-* {
+html{
   background-color: #041b53;
+  margin: 7% 20%;
+  color: #fefdfe;
+  text-align: center;
+  font-family: "popins", sans-serif;
+  font-weight: 600;
+  font-size: 1em;
 }
 .main {
   margin: 7% 20%;
@@ -68,6 +74,8 @@ ul li input {
 .listItem {
   display: flex;
   justify-content: space-between;
+  background-color: rgba(97, 218, 250, 0.1);
+  border-radius: 15px;
 }
 .deleteButton {
   display: inline;
@@ -75,6 +83,7 @@ ul li input {
   border: 0;
   padding: 0;
   color: #fefdfe;
+  background-color: rgb(0,0,0,0);
 }
 .addButtonContainer {
   display: inline-block;
@@ -89,15 +98,15 @@ ul li input {
   cursor: pointer;
   font-size: 50px;
   position: fixed;
-  bottom: auto;
-  right: auto;
+  bottom: 5%;
+  right: 5%;
   font-weight: bold;
   color: #FAFAFA;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 64px;
-  width: 64px;
+  height: 2em;
+  width: 2em;
   transform: rotate(0);
   transition: .3s ease;
 }
@@ -117,4 +126,86 @@ ul li input {
   justify-content: center;
   align-items: center;
   color: white;
+}
+
+/*style the input box for a new task*/
+.newTaskInput {
+  resize: none;
+  outline: none;
+  display: block;
+  margin: auto;
+  margin-bottom: 1.8em;
+  border-radius: 10px;
+  width: 80%;
+  height: 3em;
+}
+
+/*class to style the form for a new task*/
+.newTaskForm {
+  height: fit-content;
+  padding-bottom: 2em;
+  padding-top: 1em;
+  width: 30%;
+  background-color: rgba(97, 218, 250, 0.5);
+  border-radius: 15px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+/* CSS */
+.buttonForm {
+  appearance: none;
+  margin: 0.3em;
+  background-color: #f469bc;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+
+.buttonForm:hover {
+  background-color: #041b53;
+}
+
+.buttonForm:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.buttonForm:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.buttonForm:active {
+  background-color: #041b53;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+.buttonGroup { 
+  display: inline;
+  margin-left:auto;
+  text-align: center;
+}
+.buttonForm.buttonFormCancel{
+  background-color: #f50395;
 }
