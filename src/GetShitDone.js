@@ -4,6 +4,7 @@ import { Status } from "./Status";
 import { TasksList } from "./TasksList";
 import { CreateTask } from "./CreateTask";
 import { SearchBar } from "./SearchBar";
+import { LoadingSpinner } from "./LoadingSpinner";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { todoContext } from "./hooks/useContext";
 import "./css/getShitDone.css";
@@ -56,6 +57,17 @@ function GetShitDone() {
     let newTasks = [...tasks,{title, completed: false}];
     setTasks(newTasks);
   };
+  if(loading){
+    return(
+    <div className="main">
+      <todoContext.Provider value={{searchedTasks, toggleTask, deleteTask, showModal, setShowModal, addTask}}>
+        <Header />
+        <LoadingSpinner/>
+      </todoContext.Provider>
+    </div>
+
+    )
+  }
 
   return (
     <div className="main">

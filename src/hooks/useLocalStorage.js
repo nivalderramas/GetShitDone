@@ -22,7 +22,7 @@ function useLocalStorage(key, initialValue) {
     } finally {
       setLoading(false);
     }
-  }, 1000);
+  }, 1500);
   const setItemValue = (itemValue) => {
     localStorage.setItem(key, JSON.stringify(itemValue));
     setItem(itemValue);
